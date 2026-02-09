@@ -3,24 +3,18 @@ name = "mycalculator"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.9"
-authors = [{ name = "Flet developer", email = "you@example.com" }]
-dependencies = ["flet==0.28.3", "mylocale", "flet-localisation"]
+requires-python = ">=3.10"
+authors = [{ name = "tct123", email = "you@example.com" }]
+dependencies = ["flet>=0.80.5", "mylocale", "flet-localisation"]
+
+[dependency-groups]
+dev = ["flet-cli>=0.80.5", "flet-desktop>=0.80.5", "flet-web>=0.80.5"]
 
 [tool.flet]
-# org name in reverse domain name notation, e.g. "com.mycompany".
-# Combined with project.name to build bundle ID for iOS and Android apps
 org = "de.cmg"
-
-# project display name that is used as an app title on Android and iOS home screens,
-# shown in window titles and about app dialogs on desktop.
 product = "MyCalculator"
-
-# company name to display in about app dialogs
 company = "Creative Media Group"
-
-# copyright text to display in about app dialogs
-copyright = "Copyright (C) 2025 by Creative Media Group"
+copyright = "Copyright (C) 2023-2026 by Creative Media Group"
 
 [tool.flet.app]
 path = "src"
@@ -30,20 +24,3 @@ dependencies = ["pyjnius"]
 
 [tool.flet.ios]
 dependencies = ["pyobjus"]
-
-#[tool.flet.android.signing]
-# store and key passwords can be passed with `--android-signing-key-store-password`
-# and `--android-signing-key-password` options or
-# FLET_ANDROID_SIGNING_KEY_STORE_PASSWORD
-# and FLET_ANDROID_SIGNING_KEY_PASSWORD environment variables.
-#key_store = "release.jks" # --android-signing-key-store
-#key_alias = "cmg"
-
-[tool.uv]
-dev-dependencies = ["flet[all]==0.28.3"]
-
-[tool.poetry]
-package-mode = false
-
-[tool.poetry.group.dev.dependencies]
-flet = { extras = ["all"], version = "0.28.3" }
