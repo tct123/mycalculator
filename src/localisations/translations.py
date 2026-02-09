@@ -1,5 +1,5 @@
 import os
-from mylocale import tr
+from mylocale import TR
 from flet_localisation import locale
 import flet as ft
 
@@ -11,6 +11,7 @@ def HELLOMSG(page):
     myplatfom = str(page.platform)
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
+    tr = TR(langcode=langcode, csv_file=trfile)
     return tr(
         csv_file=trfile,
         target_key="HELLOWORLD",
@@ -22,6 +23,7 @@ def MENUEHINTMSG(page):
     myplatfom = str(page.platform)
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
+    tr = TR(langcode=langcode, csv_file=trfile)
     return tr(
         csv_file=trfile,
         target_key="SHOWMENUEHINT",
@@ -33,6 +35,7 @@ def TITLE(page):
     myplatfom = str(page.platform)
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
+    tr = TR(langcode=langcode, csv_file=trfile)
     return tr(
         csv_file=trfile,
         target_key="TITLE",
@@ -44,6 +47,7 @@ def DATAPROTECTIONITEM(page):
     myplatfom = str(page.platform)
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
+    tr = TR(langcode=langcode, csv_file=trfile)
     return tr(
         csv_file=trfile,
         target_key="DATAPROTECTIONITEM",
