@@ -12,8 +12,7 @@ def HELLOMSG(page):
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
     tr = TR(langcode=langcode, csv_file=trfile)
-    return tr(
-        csv_file=trfile,
+    return tr.tr(
         target_key="HELLOWORLD",
         langcode=langcode,
     )
@@ -24,8 +23,7 @@ def MENUEHINTMSG(page):
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
     tr = TR(langcode=langcode, csv_file=trfile)
-    return tr(
-        csv_file=trfile,
+    return tr.tr(
         target_key="SHOWMENUEHINT",
         langcode=langcode,
     )
@@ -36,8 +34,7 @@ def TITLE(page):
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
     tr = TR(langcode=langcode, csv_file=trfile)
-    return tr(
-        csv_file=trfile,
+    return tr.tr(
         target_key="TITLE",
         langcode=langcode,
     )
@@ -48,8 +45,7 @@ def DATAPROTECTIONITEM(page):
     langcode = str(locale(platform=myplatfom)).split("_")[0]
     region = str(locale(platform=myplatfom)).split("_")[1]
     tr = TR(langcode=langcode, csv_file=trfile)
-    return tr(
-        csv_file=trfile,
+    return tr.tr(
         target_key="DATAPROTECTIONITEM",
         langcode=langcode,
     )
