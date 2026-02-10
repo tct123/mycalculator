@@ -1,6 +1,7 @@
 import flet as ft
 import dataprotection as dn
 from localisations import *
+import asyncio
 
 
 def main(page: ft.Page):
@@ -15,11 +16,11 @@ def main(page: ft.Page):
     )
     page.update()
 
-    def github(e):
-        page.launch_url("https://github.com/tct123")
+    async def github(e):
+        await page.launch_url("https://github.com/tct123")
 
-    def dataprotection(e):
-        page.launch_url("https://tct123.github.io")
+    async def dataprotection(e):
+        await page.launch_url("https://tct123.github.io")
 
     def dataprotectionpopup(e):
         page.open(dlg)
@@ -69,15 +70,16 @@ def main(page: ft.Page):
     )
 
     def btnclick(e: ft.ControlEvent) -> None:
-        if e.control.content == "C":
+        btn_text = e.control.content.value
+        if btn_text == "C":
             result.value = ""
-        elif e.control.text == "=":
+        elif btn_text == "=":
             try:
                 result.value = str(eval(result.value))
             except:
                 result.value = "Error"
         else:
-            result.value += e.control.text
+            result.value += btn_text
         result.update()
 
     buttons = ["789/", "456*", "123-", "0.C+", "(=)"]
