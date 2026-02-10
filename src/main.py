@@ -10,20 +10,21 @@ def main(page: ft.Page):
     page.auto_scroll = True
     dlg = ft.AlertDialog(
         title=ft.Text(dn.heading),
-        content=ft.Column(controls=[ft.Text(dn.content)], scroll=True),
+        content=ft.Column(controls=[ft.Text(dn.content)], scroll=ft.ScrollMode.ALWAYS),
         modal=True,
-        actions=[ft.Button("OK", on_click=lambda e: page.close(dlg))],
+        actions=[ft.Button("OK", on_click=lambda e: page.pop_dialog())],
     )
+    urllauncher = ft.UrlLauncher()
     page.update()
 
     async def github(e):
-        await page.launch_url("https://github.com/tct123")
+        await urllauncher.launch_url("https://github.com/tct123")
 
     async def dataprotection(e):
-        await page.launch_url("https://tct123.github.io")
+        await urllauncher.launch_url("https://tct123.github.io")
 
     def dataprotectionpopup(e):
-        page.open(dlg)
+        page.show_dialog(dlg)
 
     page.title = TITLE(page=page)
 
