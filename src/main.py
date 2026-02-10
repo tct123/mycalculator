@@ -39,10 +39,12 @@ def main(page: ft.Page):
                 tooltip=MENUEHINTMSG(page=page),
                 items=[
                     ft.PopupMenuItem(
-                        text="GitHub", icon=ft.Icons.DEVELOPER_BOARD, on_click=github
+                        content=ft.Text("GitHub"),
+                        icon=ft.Icons.DEVELOPER_BOARD,
+                        on_click=github,
                     ),
                     ft.PopupMenuItem(
-                        text=DATAPROTECTIONITEM(page=page),
+                        content=ft.Text(DATAPROTECTIONITEM(page=page)),
                         icon=ft.Icons.WARNING,
                         on_click=dataprotectionpopup,
                     ),
@@ -66,7 +68,7 @@ def main(page: ft.Page):
         border=ft.InputBorder.NONE,
     )
 
-    def btnclick(e):
+    def btnclick(e: ft.ControlEvent):
         if e.control.text == "C":
             result.value = ""
         elif e.control.text == "=":
@@ -83,7 +85,7 @@ def main(page: ft.Page):
     for row in buttons:
         row_controls = []
         for btntext in row:
-            btn = ft.TextButton(text=btntext, on_click=btnclick, expand=1)
+            btn = ft.TextButton(content=ft.Text(btntext), on_click=btnclick, expand=1)
             row_controls.append(btn)
         page.add(
             ft.SafeArea(
@@ -95,4 +97,4 @@ def main(page: ft.Page):
         )
 
 
-ft.app(main)
+ft.run(main)
