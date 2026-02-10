@@ -28,10 +28,10 @@ def main(page: ft.Page):
 
     # page.window_full_screen = True
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.adaptive = True
     page.appbar = ft.AppBar(
-        title=ft.Text(page.title),
+        title=ft.Text(str(page.title)),
         bgcolor=ft.Colors.BLUE,
         center_title=True,
         actions=[
@@ -68,8 +68,8 @@ def main(page: ft.Page):
         border=ft.InputBorder.NONE,
     )
 
-    def btnclick(e: ft.ControlEvent):
-        if e.control.text == "C":
+    def btnclick(e: ft.ControlEvent) -> None:
+        if e.control.content == "C":
             result.value = ""
         elif e.control.text == "=":
             try:
