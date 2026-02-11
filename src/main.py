@@ -67,14 +67,6 @@ def main(page: ft.Page):
         ],
     )
 
-    # page.navigation_bar = ft.NavigationBar(
-    #    destinations=[
-    #        ft.NavigationDestination(icon=ft.Icons.EXPLORE, label="Explore"),
-    #        ft.NavigationDestination(icon=ft.Icons.COMMUTE, label="Commute"),
-    #        ft.NavigationDestination(icon=ft.Icons.BOOKMARK_BORDER, label="Explore"),
-    #    ],
-    #    # bgcolor=ft.Colors.RED,
-    # )
     result = ft.TextField(
         text_align=ft.TextAlign.RIGHT,
         expand=1,
