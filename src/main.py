@@ -6,7 +6,19 @@ import asyncio
 
 def main(page: ft.Page):
     hf = ft.HapticFeedback()
-    page.overlay.append(hf)
+
+    async def heavy_impact():
+        await hf.heavy_impact()
+
+    async def medium_impact():
+        await hf.medium_impact()
+
+    async def light_impact():
+        await hf.light_impact()
+
+    async def vibrate():
+        await hf.vibrate()
+
     page.auto_scroll = True
     dlg = ft.AlertDialog(
         title=ft.Text(dn.heading),
@@ -70,14 +82,17 @@ def main(page: ft.Page):
         border=ft.InputBorder.NONE,
     )
 
-    def btnclick(e: ft.ControlEvent) -> None:
+    async def btnclick(e: ft.Event) -> None:
         btn_text = e.control.content.value
         if btn_text == "C":
+            await heavy_impact()
             result.value = ""
         elif btn_text == "=":
             try:
+                await vibrate()
                 result.value = str(eval(result.value))
             except:
+                await heavy_impact()
                 result.value = "Error"
         else:
             result.value += btn_text
