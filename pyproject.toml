@@ -5,10 +5,10 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "tct123", email = "you@example.com" }]
-dependencies = ["flet>=0.80.5", "mylocale", "flet-localisation"]
+dependencies = ["flet>=0.82.0"]
 
 [dependency-groups]
-dev = ["flet-cli>=0.80.5", "flet-desktop>=0.80.5", "flet-web>=0.80.5"]
+dev = ["flet-cli>=0.82.0", "flet-desktop-light>=0.82.0", "flet-web>=0.82.0"]
 
 [tool.flet]
 org = "de.cmg"
