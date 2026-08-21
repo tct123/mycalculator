@@ -1,6 +1,7 @@
 # Mycalculator app
 ## Screeshots
 <img src="screenshot.png">
+
 ## Run the app
 
 ### uv
